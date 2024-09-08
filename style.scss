@@ -1,6 +1,19 @@
-// Variables
+// Variables & Mixins
 $color: #1E1E1E;
 $color_green: #18302b;
+
+@mixin flex-direction-column {
+    flex-direction: column;
+}
+
+@mixin flex-container($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 // Global 
 body {
@@ -24,14 +37,19 @@ body {
         display: flex;
         gap: 20px;
 
+
         & a {
             color: white;
             text-decoration: none;
             font-family: "QuickSand", sans-serif;
             font-size: 16px;
+            padding-bottom: 5px;
+            position: relative;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
 
             &:hover {
-                border-bottom: #AF8958 solid 2px;
+                border-bottom-color: #AF8958;
             }
         }
     }
@@ -80,7 +98,8 @@ body {
         color: black;
         background-color: white;
         font-family: "Quicksand", sans-serif;
-        padding: 10px 20px;
+        padding: 16px 20px;
+        font-weight: 700;
     }
 }
 
@@ -243,73 +262,6 @@ body {
 }
 
 
-//Clients Review
-
-// .clients-review {
-//     background-color: #f8f8f8;
-//     text-align: center;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     padding: 5%;
-// }
-
-// .clients-review_text {
-//     width: 60%;
-//     /* text-align: center; */
-// }
-
-// .clients-review_text h3 {
-//     font-size: 48px;
-//     font-family: "Rubik", serif;
-//     margin-top: 5%;
-// }
-
-// .clients-review_text p {
-//     font-size: 16px;
-//     font-family: "Quicksand", sans-serif;
-//     color: #1E1E1E;
-// }
-
-// .clients-review_clients {
-//     margin: 5%;
-//     display: flex;
-//     flex-direction: row;
-//     gap: 32px;
-//     justify-content: space-around;
-// }
-
-// .clients-review_clients-client {
-//     background-color: white;
-//     border-radius: 10px;
-//     padding: 30px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
-
-
-
-// .clients-review_clients-client-title {
-//     font-size: 16px;
-//     font-weight: bold;
-// }
-
-// .clients-review_clients-client-subtitle {
-//     font-size: 12px;
-//     font-weight: 400;
-//     margin-top: -5px;
-// }
-
-// .clients-review_clients-client_description {
-//     font-size: 16px;
-//     color: #1E1E1E;
-// }
-
-
-
-
 
 
 // Clients Review
@@ -377,6 +329,9 @@ body {
 
 // Blog
 .blog {
+    width: 100%;
+    margin: 0 auto;
+
     &__title {
         margin-left: 8%;
         font-size: 48px;
@@ -390,9 +345,13 @@ body {
         gap: 50px;
         margin-left: 10%;
         margin-right: 10%;
+        width: 80%;
+        flex-wrap: wrap;
+        max-width: 1200vw;
 
         &-case {
             text-align: left;
+            flex: 1 1 300px;
 
             p {
                 font-size: 14px;
@@ -506,6 +465,9 @@ body {
             resize: none;
             height: 10vh;
             width: 100%;
+            &::placeholder {
+                font-family: "Inter", serif;
+            }
         }
 
         &__submit {
@@ -542,24 +504,35 @@ body {
             display: flex;
             flex-direction: row;
             align-items: center;
+            position: relative;
 
             input {
-                padding: 10px;
+                padding: 10px 15px;
                 background-color: #354643;
                 border-radius: 5px;
                 border: none;
                 color: white;
+                opacity: 1;
                 width: 100%;
                 height: 30px;
+
+                &::placeholder {
+                    color: white;
+                    opacity: 1; 
+                  }
             }
 
             button {
-                padding: 10px;
+                padding: 10px 15px;
                 background-color: white;
                 border-radius: 5px;
                 border: none;
                 color: black;
                 width: auto;
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
+                
             }
         }
 
@@ -619,97 +592,63 @@ body {
 @media (max-width: 986px) {
 
     .navbar {
-        flex-direction: row;
-        align-items: flex-start;
+        @include flex-container(row);
+        justify-content: space-between;
         padding: 10px 5%;
-        height: auto;
-    
+        position: relative;
+
+
+
         .navbar__burger {
             display: flex;
-            position: relative; /* Maintient sa position */
+            position: relative;
             margin-bottom: 10px;
         }
-    
+
         .navbar__list {
-            // position: absolute;
-            top: 100%; /* En-dessous du header */
+            position: absolute;
+            top: 100%;
+            background-color: $color_green;
             left: 0;
             right: 0;
             flex-direction: column;
             display: none;
-            // background-color: #2ecc71;
             padding: 10px 0;
             z-index: 1;
-    
+
             & a {
                 padding: 10px 20px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-                width: 100%;
                 text-align: left;
             }
         }
-    
+
         .navbar__list--active {
             display: flex;
+
         }
     }
 
-    .hero__content {
-        flex-direction: column;
+    .hero__content, .clients-review__clients, .about__container, 
+    .about__item, .industries__icons, .video__container, 
+    .clients-review__text, .blog__cases, .form, .footer__nav,
+    .footer__right, .footer__left {
+        @include flex-direction-column;
     }
 
     .hero__title {
         font-size: 50px;
     }
 
-    .clients-review__clients {
-        flex-direction: column;
-    }
-
-    .about__container {
-        flex-direction: column;
-    }
-
-    .about__item {
-        flex-direction: column;
-    }
-
-    .industries__icons {
-        flex-direction: column;
-    }
-
-    .video__container {
-        flex-direction: column;
-    }
-
-    .clients-review__text {
-        flex-direction: column;
-    }
-
-    .blog__cases {
-        flex-direction: column;
-    }
-
-    .form {
-        flex-direction: column;
-        //   width: 100%;
-
-        &__formulaire {
-            width: 100%;
-        }
-    }
-
-    .footer__nav {
-        flex-direction: column;
+    .form__formulaire {
+        width: 100%;
     }
 
     .footer__right {
-        flex-direction: column;
         width: 80%;
     }
 
     .footer__left {
-        flex-direction: column;
         gap: 40px;
     }
 }
