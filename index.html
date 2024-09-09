@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -26,18 +26,45 @@
             <img src="assets/compass.png" alt="Logo de l'entreprise">
         </div>
         <div class="navbar__men">
-        <button class="navbar__burger">
+        <button class="navbar__burger" aria-label="Ouvrir le menu">
             <span class="navbar__burger-line"></span>
             <span class="navbar__burger-line"></span>
             <span class="navbar__burger-line"></span>
         </button>
 
         <nav class="navbar__list">
-            <a href="#">Home</a>
-            <a href="#">Services &#9660;</a>
-            <a href="#">Industries &#9660;</a>
+            <a href="index.html">Home</a>
+            <a href="#">Services <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                <g clip-path="url(#clip0_1_163)">
+                <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_163">
+                <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
+                </clipPath>
+                </defs>
+                </svg></a>
+            <a href="#">Industries <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                <g clip-path="url(#clip0_1_163)">
+                <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_164">
+                <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
+                </clipPath>
+                </defs>
+                </svg></a>
             <a href="#">Portfolio</a>
-            <a href="#">Company &#9650;</a>
+            <a href="#">Company <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                <g clip-path="url(#clip0_1_168)">
+                  <path d="M4 10.5L8 6.5L12 10.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_168">
+                    <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16.5)"/>
+                  </clipPath>
+                </defs>
+              </svg></a>
         </nav>
     </div>
 
@@ -50,7 +77,7 @@
         </div>
     </section>
 
-    <img class="souris" src="assets/souris.png" alt="Icone Souris d'ordinateur">
+    <img class="souris" src="assets/souris2.png" alt="Icone Souris d'ordinateur">
 
     <section class="about">
         <h2 class="about__title">ABOUT</h2>
@@ -202,7 +229,7 @@
                 <input type="text" placeholder="Full name">
                 <input type="text" class="form__formulaire__phone" placeholder="Phone number">
                 <input type="text" placeholder="Email Address">
-                <textarea name="message" placeholder="Enter text" id=""></textarea>
+                <textarea name="message" placeholder="Enter text" id="message"></textarea>
                 <button class="form__formulaire__submit">Send</button>
 
 
