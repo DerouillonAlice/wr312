@@ -18,55 +18,62 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="navbar__logo">
             <img src="assets/compass.png" alt="Logo de l'entreprise">
         </div>
         <div class="navbar__men">
-        <button class="navbar__burger" aria-label="Ouvrir le menu">
-            <span class="navbar__burger-line"></span>
-            <span class="navbar__burger-line"></span>
-            <span class="navbar__burger-line"></span>
-        </button>
+            utton c<blass="navbar__burger" aria-label="Ouvrir le menu">
+                <span class="navbar__burger-line"></span>
+                <span class="navbar__burger-line"></span>
+                <span class="navbar__burger-line"></span>
+            </button>
 
-        <nav class="navbar__list">
-            <a href="index.html">Home</a>
-            <a href="#">Services <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <g clip-path="url(#clip0_1_163)">
-                <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_1_163">
-                <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
-                </clipPath>
-                </defs>
-                </svg></a>
-            <a href="#">Industries <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <g clip-path="url(#clip0_1_163)">
-                <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_1_164">
-                <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
-                </clipPath>
-                </defs>
-                </svg></a>
-            <a href="#">Portfolio</a>
-            <a href="#">Company <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <g clip-path="url(#clip0_1_168)">
-                  <path d="M4 10.5L8 6.5L12 10.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_168">
-                    <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16.5)"/>
-                  </clipPath>
-                </defs>
-              </svg></a>
-        </nav>
-    </div>
+            <nav class="navbar__list">
+                <a href="index.html">Home</a>
+                <a href="#">Services <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                        fill="none">
+                        <g clip-path="url(#clip0_1_163)">
+                            <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_163">
+                                <rect width="16" height="16" fill="white" transform="translate(0 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg></a>
+                <a href="#">Industries <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                        viewBox="0 0 16 17" fill="none">
+                        <g clip-path="url(#clip0_1_163)">
+                            <path d="M4 6.5L8 10.5L12 6.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_164">
+                                <rect width="16" height="16" fill="white" transform="translate(0 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg></a>
+                <a href="#">Portfolio</a>
+                <a href="#">Company <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                        fill="none">
+                        <g clip-path="url(#clip0_1_168)">
+                            <path d="M4 10.5L8 6.5L12 10.5" stroke="white" stroke-opacity="0.5" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_168">
+                                <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg></a>
+            </nav>
+        </div>
 
 
     </header>
@@ -77,7 +84,12 @@
         </div>
     </section>
 
-    <img class="souris" src="assets/souris2.png" alt="Icone Souris d'ordinateur">
+    <a href="#footer" class="scroll-smooth">
+        <img class="souris" src="assets/souris2.png" alt="Icone Souris d'ordinateur">
+    </a>
+
+
+
 
     <section class="about">
         <h2 class="about__title">ABOUT</h2>
@@ -212,7 +224,7 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="banner">
             <h2>Contact Us</h2>
             <a href="#contact">Contact Us</a>
@@ -239,8 +251,15 @@
         </div>
     </section>
 
+    <section class="fleche">
+        <a href="#navbar">
+            <img class="fleche__haut" src="assets/fleche.png" alt="Fleche pour remonter">
+        </a>
+    </section>
 
-    <footer class="footer">
+
+
+    <footer class="footer" id="footer">
         <div class="footer__nav">
             <div class="footer__left">
                 <div class="footer__left__logo">
@@ -293,6 +312,20 @@
             console.log('Burger clicked');
             menu.classList.toggle('navbar__list--active');
         });
+
+        document.querySelector('.scroll-smooth').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        document.querySelector('#footer').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelector('.fleche a').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        document.querySelector('#navbar').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
     </script>
 
 
