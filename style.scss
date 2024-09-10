@@ -1,18 +1,23 @@
 // Variables & Mixins
-$color: #1E1E1E;
+$color_text: #1E1E1E;
 $color_green: #18302b;
+$color_background: #f8f8f8;
+
+
+$quicksand: 'Quicksand', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$inter: 'Inter', sans-serif;
 
 @mixin flex-direction-column {
     flex-direction: column;
 }
 
-@mixin flex-container($direction) {
+@mixin flex-container($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
-    align-items: center;
-    justify-content: center;
+    justify-content: $justify;
+    align-items: $align;
 }
-
 
 
 // Global 
@@ -20,13 +25,12 @@ body {
     color: black;
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $quicksand;
 }
 
 // Navbar
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    @include flex-container(row, space-between, center);
     align-items: center;
     padding: 10px 5%;
     background-color: $color_green;
@@ -34,15 +38,14 @@ body {
     height: 8vh;
 
     &__list {
-        display: flex;
+        @include flex-container(row, center, center);
         gap: 30px;
-        align-items: center;
 
 
         & a {
             color: white;
             text-decoration: none;
-            font-family: "QuickSand", sans-serif;
+            font-family: $quicksand;
             font-size: 16px;
             padding-bottom: 5px;
             position: relative;
@@ -99,7 +102,7 @@ body {
         text-decoration: none;
         color: black;
         background-color: white;
-        font-family: "Quicksand", sans-serif;
+        font-family: $quicksand;
         padding: 16px 40px;
         font-weight: 700;
     }
@@ -118,24 +121,21 @@ body {
     margin-right: 10%;
 
     &__title {
-        font-family: "Rubik", serif;
+        font-family: $rubik;
         font-size: 46px;
         margin-bottom: 6%;
     }
 
     &__container {
-        display: flex;
-        flex-direction: column;
+        @include flex-container(column, center, center);
         gap: 50px;
     }
 
     &__item {
         max-width: 90%;
         text-align: left;
-        display: flex;
-        flex-direction: row;
         gap: 100px;
-        align-items: center;
+        @include flex-container(row, center, center);
     }
 
     &__item-image {
@@ -152,20 +152,19 @@ body {
         margin-top: 10px;
         font-size: 40px;
         font-weight: 700;
-        font-family: "Rubik", serif;
+        font-family: $rubik;
     }
 
     &__item-description {
         margin-top: 10px;
         font-size: 20px;
-        color: $color;
+        color: $color_text;
     }
 }
 
 // Industries
 .industries {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column, center, center);
     background-color: $color_green;
     color: white;
     text-align: center;
@@ -173,25 +172,20 @@ body {
     margin-top: 5%;
 
     &__title {
-        font-family: "Rubik", serif;
+        font-family: $rubik;
         font-size: 48px;
         margin-bottom: 6%;
     }
 
     &__icons {
-        display: flex;
-        flex-direction: row;
+        @include flex-container(row, center, center);
         margin-left: 10%;
-        justify-content: center;
         gap: 5%;
-        align-items: center;
     }
 
     &__item {
-        display: flex;
-        flex-direction: column;
+        @include flex-container(column, center, center);
         margin-right: 10%;
-        align-items: center;
         transition: transform 0.3s ease;
     }
 
@@ -242,14 +236,12 @@ body {
         position: absolute;
         top: 90%;
         left: 15%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include flex-container(row, center, center);
         transform: translate(-50%, -50%);
         color: white;
         text-decoration: none;
         font-size: 1rem;
-        font-family: "Quicksand", sans-serif;
+        font-family: $quicksand;
     }
 
     &__button-icon {
@@ -269,12 +261,9 @@ body {
 
 // Clients Review
 .clients-review {
-    background-color: #f8f8f8;
+    background-color: $color_background;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-container(column, center, center);
     padding: 5%;
 
     &__text {
@@ -283,30 +272,26 @@ body {
 
     &__text h3 {
         font-size: 48px;
-        font-family: "Rubik", serif;
+        font-family: $rubik;
         margin-top: 5%;
     }
 
     &__text p {
         font-size: 16px;
-        font-family: "Quicksand", sans-serif;
-        color: #1E1E1E;
+        font-family: $quicksand;
+        color: $color_text;
     }
 
     &__clients {
         margin: 5%;
-        display: flex;
-        flex-direction: row;
+        @include flex-container(row, space-around, center);
         gap: 32px;
-        justify-content: space-around;
 
         &-client {
             background-color: white;
             border-radius: 10px;
             padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex-container(column, center, center);
 
             &-title {
                 font-size: 16px;
@@ -321,7 +306,7 @@ body {
 
             &-description {
                 font-size: 16px;
-                color: #1E1E1E;
+                color: $color_text;
             }
         }
     }
@@ -342,9 +327,7 @@ body {
 
     &__cases {
         text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
+        @include flex-container(row, center, center);
         gap: 50px;
         margin-left: 10%;
         margin-right: 10%;
@@ -358,14 +341,14 @@ body {
 
             p {
                 font-size: 14px;
-                color: #1E1E1E;
+                color: $color_text;
                 font-weight: 400;
             }
 
             h4 {
                 font-size: 24px;
                 font-weight: 700;
-                color: #1E1E1E;
+                color: $color_text;
             }
         }
 
@@ -380,7 +363,7 @@ body {
             text-decoration: none;
             color: black;
             text-align: center;
-            border: #1E1E1E;
+            border: $color_text;
             border-style: solid;
             border-width: 1px;
             padding: 12px 20px;
@@ -395,17 +378,14 @@ body {
 .banner {
     background-color: #eff1f0;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    @include flex-container(row, center, center);
     gap: 72px;
     padding: 40px;
     margin-top: 135px;
 
     h2 {
         font-size: 36px;
-        font-family: "Inter", serif;
+        font-family: $inter;
     }
 
     a {
@@ -425,11 +405,11 @@ body {
         font-weight: 600;
         margin-left: 10%;
         margin-top: 10%;
-        font-family: 'Rubik', sans-serif;
+        font-family: $rubik;
     }
 
     p {
-        font-family: "Inter", serif;
+        font-family: $inter;
         font-weight: 500;
         font-size: 19px;
     }
@@ -437,9 +417,7 @@ body {
 
 
 .form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex-container(row, center, center);
     gap: 120px;
     margin-left: 9%;
     margin-right: 8%;
@@ -449,27 +427,27 @@ body {
     }
 
     &__formulaire {
-        display: flex;
-        flex-direction: column;
+        @include flex-container(column, center, end);
         gap: 20px;
         width: 50%;
-        align-items: end;
+
 
         & input {
             padding: 10px;
-            border: 1px solid #f4f4f4;
+            border: 1px solid $color_background;
             width: 100%;
         }
 
         & textarea {
             padding: 10px;
-            background-color: #f4f4f4;
-            border: #f4f4f4;
+            background-color: $color_background;
+            border: $color_background;
             resize: none;
             height: 10vh;
             width: 100%;
+
             &::placeholder {
-                font-family: "Inter", serif;
+                font-family: $inter;
             }
         }
 
@@ -477,7 +455,7 @@ body {
             padding: 16px;
             background-color: #737373;
             color: white;
-            font-family: "Inter", serif;
+            font-family: $inter;
             font-weight: 500;
             width: 25%;
             border: none;
@@ -495,13 +473,25 @@ body {
     flex-direction: column;
     margin-top: 10%;
 
+    &__nav {
+        @include flex-container(row, space-between, center);
+    }
+
+    &__mentions {
+        background-color: $color_green;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+    }
+
     &__right {
         display: flex;
         flex-direction: column;
         background-color: $color_green;
         padding: 5%;
         gap: 30px;
-        width: 20%;
+        width: 25%;
 
         &__mail {
             display: flex;
@@ -521,8 +511,8 @@ body {
 
                 &::placeholder {
                     color: white;
-                    opacity: 1; 
-                  }
+                    opacity: 1;
+                }
             }
 
             button {
@@ -535,7 +525,7 @@ body {
                 position: absolute;
                 right: 0;
                 margin-right: 10px;
-                
+
             }
         }
 
@@ -551,9 +541,7 @@ body {
     }
 
     &__left {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        @include flex-container(row, space-around, start);
         background-color: $color_green;
         color: white;
         padding: 20px;
@@ -574,19 +562,7 @@ body {
     }
 }
 
-.footer__nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
-.footer__mentions {
-    background-color: $color_green;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-}
 
 
 
@@ -595,8 +571,8 @@ body {
 @media (max-width: 986px) {
 
     .navbar {
-        @include flex-container(row);
-        justify-content: space-between;
+        @include flex-container(row, space-between, center);
+        // justify-content: space-between;
         padding: 10px 5%;
         position: relative;
 
@@ -615,9 +591,17 @@ body {
             left: 0;
             right: 0;
             flex-direction: column;
+            align-items: flex-end;
+            // text-align: left;
             display: none;
+            // width: 100%;
             padding: 10px 0;
             z-index: 1;
+
+            &--active {
+                display: flex;
+
+            }
 
             & a {
                 padding: 10px 20px;
@@ -625,17 +609,20 @@ body {
                 text-align: left;
             }
         }
-
-        .navbar__list--active {
-            display: flex;
-
-        }
     }
 
-    .hero__content, .clients-review__clients, .about__container, 
-    .about__item, .industries__icons, .video__container, 
-    .clients-review__text, .blog__cases, .form, .footer__nav,
-    .footer__right, .footer__left {
+    .hero__content,
+    .clients-review__clients,
+    .about__container,
+    .about__item,
+    .industries__icons,
+    .video__container,
+    .clients-review__text,
+    .blog__cases,
+    .form,
+    .footer__nav,
+    .footer__right,
+    .footer__left {
         @include flex-direction-column;
     }
 
@@ -649,23 +636,36 @@ body {
         font-size: 14px;
     }
 
-    .about__item{
-        gap: 20px;
+    .souris {
+        width: 10%;
     }
 
-    .about__item:nth-child(2) {
-        flex-direction: column-reverse;
+    .about__item {
+        gap: 20px;
+
+        &:nth-child(2) {
+            flex-direction: column-reverse;
+        }
     }
+
+
 
     .form__formulaire {
         width: 100%;
     }
 
-    .footer__right {
-        width: 80%;
-    }
+    .footer {
 
-    .footer__left {
-        gap: 40px;
+        &__right {
+            width: 80%;
+        }
+
+        &__nav {
+            align-items: start;
+        }
+
+        &__left {
+            gap: 40px;
+        }
     }
 }
