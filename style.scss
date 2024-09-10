@@ -114,6 +114,7 @@ body {
     position: relative;
 }
 
+
 // About
 .about {
     padding: 60px 20px;
@@ -465,6 +466,16 @@ body {
     }
 }
 
+//Scroll to top
+
+.fleche{
+    @include flex-container(row, center, center);
+    margin-top: 5%;
+    // padding-right: 10%;
+    &__haut{
+        rotate: 180deg;
+    }
+}
 
 //Footer
 .footer {

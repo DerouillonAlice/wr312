@@ -18,15 +18,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="navbar__logo">
             <img src="assets/compass.png" alt="Logo de l'entreprise">
         </div>
         <div class="navbar__men">
-            <button class="navbar__burger" aria-label="Ouvrir le menu">
+            utton c<blass="navbar__burger" aria-label="Ouvrir le menu">
                 <span class="navbar__burger-line"></span>
                 <span class="navbar__burger-line"></span>
                 <span class="navbar__burger-line"></span>
@@ -83,7 +84,12 @@
         </div>
     </section>
 
-    <img class="souris" src="assets/souris2.png" alt="Icone Souris d'ordinateur">
+    <a href="#footer" class="scroll-smooth">
+        <img class="souris" src="assets/souris2.png" alt="Icone Souris d'ordinateur">
+    </a>
+
+
+
 
     <section class="about">
         <h2 class="about__title">ABOUT</h2>
@@ -245,8 +251,15 @@
         </div>
     </section>
 
+    <section class="fleche">
+        <a href="#navbar">
+            <img class="fleche__haut" src="assets/fleche.png" alt="Fleche pour remonter">
+        </a>
+    </section>
 
-    <footer class="footer">
+
+
+    <footer class="footer" id="footer">
         <div class="footer__nav">
             <div class="footer__left">
                 <div class="footer__left__logo">
@@ -274,7 +287,7 @@
             <div class="footer__right">
                 <div class="footer__right__mail">
                     <input type="text" placeholder="Enter Email Address">
-                        <button type="submit">Submit</button>
+                    <button type="submit">Submit</button>
 
                 </div>
                 <div class="footer__right__social">
@@ -299,6 +312,20 @@
             console.log('Burger clicked');
             menu.classList.toggle('navbar__list--active');
         });
+
+        document.querySelector('.scroll-smooth').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        document.querySelector('#footer').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelector('.fleche a').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        document.querySelector('#navbar').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
     </script>
 
 
